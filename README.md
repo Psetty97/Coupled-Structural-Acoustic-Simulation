@@ -17,20 +17,14 @@ This repository contains the simulation workflows, scripts, and documentation fo
 - **Simpack** (for multibody simulation)
 - **Hyperworks** (for FEM modeling)
 
-## 🖼️ Key Results
-- SPL comparison between fully coupled (Abaqus) and sequentially coupled (Abaqus).
-- SPL comparison between structural tie elements (Abaqus) and acoustic-structural interface elements (Abaqus).
-- SPL comparison between FEM (Abaqus) and BEM (BEMPP).
-- Far-field sound pressure visualisations (Abaqus).
-- *Full results and plots available in the [`results/`](./results/) folder.*
-  
-➡️ Simulation videos are available at:  [View Simulation Videos](https://psetty97.github.io/Coupled-Structural-Acoustic-Simulation/)
-
 ## 📖 Summary of Findings
 - The sequentially coupled analysis achieves comparable accuracy while reducing computational cost by approximately 50% compared to the fully coupled approach.
 - Successfully demonstrated the integration of Simpack-generated displacement data into Abaqus for gearbox acoustic analysis, enabling better representation of 
   complex dynamics like gear meshing and bearing interactions.
 - Mesh refinement based on wave number and smooth geometry affects BEM accuracy at higher frequencies.
+-  *Full results and plots available in the [`results/`](./results/) folder.*
+  
+➡️ Simulation videos are available at:  [View Simulation Videos](https://psetty97.github.io/Coupled-Structural-Acoustic-Simulation/)
 
 ## 📂 Repository Structure
 
