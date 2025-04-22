@@ -23,6 +23,7 @@ This repository contains the simulation workflows, scripts, and documentation fo
 - SPL comparison between FEM (Abaqus) and BEM (BEMPP).
 - Far-field sound pressure visualisations (Abaqus).
 - *Full results and plots available in the `results/` folder.*
+  
 ➡️ Simulation videos are available at:  [View Simulation Videos](https://psetty97.github.io/Coupled-Structural-Acoustic-Simulation/)
 
 ## 📖 Summary of Findings
