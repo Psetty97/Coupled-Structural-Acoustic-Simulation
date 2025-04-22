@@ -32,17 +32,17 @@ This repository contains the simulation workflows, scripts, and documentation fo
 - Mesh refinement based on wave number and smooth geometry affects BEM accuracy at higher frequencies.
 
 ## 📂 Repository Structure
-📁 project-root/ ├── 📄 thesis.pdf # Final thesis report
-├── 📄 presentation.pdf # Thesis defense slides
-├── 📄 README.md # Project description
-├── 📂 scripts/ # Python scripts (BEMPP, post-processing)
-│ └── 🐍 bempp_acoustic_simulation.py
-├── 📂 abaqus_input_files/ # Example Abaqus input (.inp) files
-├── 📂 results/ # Plots and simulation results (SPL comparisons, etc.)
-│ └── 🖼️ spl_comparison.png
-├── 📂 images/ # Diagrams, model setups, and simulation visualizations
-├── 📄 LICENSE # MIT License
-
+project-root/
+├── thesis.pdf               # Final thesis report
+├── presentation.pdf         # Thesis defense slides
+├── README.md                # Project description
+├── scripts/                 # Python scripts (BEMPP, post-processing)
+│   └── bempp_acoustic_simulation.py
+├── abaqus_input_files/      # Example Abaqus input (.inp) files
+├── results/                 # Plots and simulation results (SPL comparisons, etc.)
+│   └── spl_comparison.png
+├── images/                  # Diagrams, model setups, and simulation visualizations
+├── LICENSE                  # MIT License
 
 ## 👩‍💻 Author
 **Prashanth Setty**  
