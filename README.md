@@ -4,7 +4,7 @@
 This repository contains the simulation workflows, scripts, and documentation for my Master's thesis on coupled structural–acoustic analysis under free-field boundary conditions. The study compares fully coupled and sequentially coupled FEM approaches in Abaqus, and validates the Boundary Element Method (BEM) calculations in BEMPP by comparing them with Abaqus.
 
 ## 🎯 Objectives
-- Compare fully coupled and sequentially coupled structural–acoustic analyses in Abaqus for a prototype cube model.
+- Compare fully coupled and sequentially coupled structural–acoustic analyses in Abaqus.
 - Develop a simulation workflow for wind turbine gearbox acoustic analysis by integrating displacement data from a multibody simulation in Simpack into Abaqus for 
   sequentially coupled acoustic calculations.
 - Validate BEMPP-based acoustic calculations against Abaqus results.
