@@ -37,8 +37,8 @@ This repository contains the simulation workflows, scripts, and documentation fo
 - ├── 📂 abaqus_input_files/      # Example Abaqus input (.inp) files
 - ├── 📂 results/                 # Plots and simulation results (SPL comparisons, etc.)
 - │   └── 🖼️ spl_comparison.png
-- ├── 📂 images/                  # Diagrams, model setups, and simulation visualizations
-- ├── 📄 LICENSE                  # MIT Licenses
+- ├── 📂 images/                  # Diagrams, model setups, and simulation visualisations
+- ├── 📄 LICENSE                  # MIT License
 
 
 ## 👩‍💻 Author
