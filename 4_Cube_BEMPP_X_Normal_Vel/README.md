@@ -8,7 +8,7 @@ This directory contains the setup and implementation of an **acoustic simulation
   Contains the Abaqus model input files defining the vibrating cube and its external boundary mesh (`outer_infinite`) used for acoustic radiation.
 
 - `RUN/`  
-  Includes **Jupyter Notebooks** that implement BEM-based simulation using **BEMPP**. These scripts load surface velocity boundary conditions (e.g., from MBS in Simpack) and compute the resulting far-field acoustic pressure.
+  Includes **Jupyter Notebooks** that implement BEM-based simulation using **BEMPP**. These scripts load surface velocity boundary conditions (e.g., from MBS in Simpack or FEM in Abaqus) and compute the resulting far-field acoustic pressure.
 
 ## 🎯 Simulation Objective
 
