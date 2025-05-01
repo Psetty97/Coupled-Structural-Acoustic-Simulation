@@ -30,7 +30,7 @@ This repository contains the simulation workflows, scripts, and documentation fo
 
 - 📁 project-root/
 - ├── 📄 thesis.pdf               # Final thesis report
-- ├── 📄 presentation.pdf         # Thesis defense slide
+- ├── 📄 [Thesis_Presentation_Slides](./1_Thesis_Presentation.pptx) # Thesis defense slide
 - ├── 📄 README.md                # Project description
 - ├── 📂 scripts/                 # Python scripts (BEMPP, post-processing)
 - │   └── 🐍 bempp_acoustic_simulation.py
