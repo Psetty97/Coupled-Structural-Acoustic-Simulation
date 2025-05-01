@@ -38,7 +38,7 @@ This repository contains the simulation workflows, scripts, and documentation fo
 - ├── 📂 results/                 # Plots and simulation results (SPL comparisons, etc.)
 - │   └── 🖼️ spl_comparison.png
 - ├── 📂 images/                  # Diagrams, model setups, and simulation visualizations
-- ├── 📄 LICENSE                  # MIT License
+- ├── 📄 LICENSE                  # MIT Licenses
 
 
 ## 👩‍💻 Author
