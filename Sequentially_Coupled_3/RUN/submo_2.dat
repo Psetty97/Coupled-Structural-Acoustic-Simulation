@@ -1,0 +1,2193 @@
+1
+
+   Abaqus 2022.HF11                                  Date 21-Aug-2024   Time 16:26:17
+   For use by WOELFEL under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine KOHLSTETTERIX 
+                          you are authorized to run
+                          Abaqus/Standard until 01-Jan-2025
+
+                          Your site id is: 200000000053191 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      http://www.3ds.com/products/simulia/locations/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                    Abaqus 2022.HF11                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_10_26-15.11.10 RELr424 177048      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2022.HF11 manuals                       * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *INCLUDE, INPUT ="../MODEL/cavity.inp"
+  *NODE
+  *ELEMENT,TYPE=ACIN3D4,ELSET=outer_infinite
+  *ELEMENT,TYPE=ACIN3D3,ELSET=outer_infinite
+  *ELEMENT,TYPE=ASI3D4,ELSET=asi
+  *ELEMENT,TYPE=AC3D4,ELSET=cavity
+  *ELEMENT,TYPE=AC3D5,ELSET=cavity
+  *NSET, NSET=por
+  *Nset,nset=asi,elset=asi
+  *MATERIAL, NAME=air
+  *DENSITY
+  *DAMPING, STRUCTURAL = 0.0
+  *ACOUSTIC MEDIUM, BULK MODULUS
+  *Interface,elset=asi
+  *SOLID SECTION, ELSET=cavity, MATERIAL=air
+  *SOLID SECTION, ELSET=outer_infinite, REF NODE =    5000788, MATERIAL=air
+  *SOLID SECTION, ELSET=cavity, MATERIAL=air
+  *SOLID SECTION, ELSET=outer_infinite, REF NODE =    5000788, MATERIAL=air
+  *Boundary,submodel, step=1
+  *Boundary,submodel, step=1
+  *SOLID SECTION, ELSET=cavity, MATERIAL=air
+  *SOLID SECTION, ELSET=outer_infinite, REF NODE =    5000788, MATERIAL=air
+  *Interface,elset=asi
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY, frequency=1
+  *Submodel, absolute=1.e-3,global elset=cube_mesh
+  *Submodel, absolute=1.e-3,global elset=cube_mesh
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY, frequency=1
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY, frequency=1
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 2 elements are distorted. Either the isoparametric angles are out 
+             of the suggested limits or the triangular or tetrahedral quality 
+             measure is bad. The elements have been identified in element set 
+             WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted tetrahedral elements
+  
+  Element  Quality measure     Min angle        Max angle     Adjusted nodes 
+ --------- ---------------- ---------------- ---------------- -------------- 
+   5005400         0.143416          7.91889           157.95       NO       
+   5016412         0.172433          9.41217          158.811       NO       
+  
+  
+  *Step
+  *Steady State Dynamics, direct, frequency scale=linear
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY, frequency=1
+  *Step
+  *Step
+   Step-1: Frequency Response                                                     
+  *Steady State Dynamics, direct, frequency scale=linear
+  *Boundary,submodel, step=1
+  *Output,field,frequency=1
+  *Node output
+  *OUTPUT, HISTORY, frequency=1
+  *ENERGY OUTPUT
+  *NODE OUTPUT, NSET = por
+  *NODE PRINT, NSET = por, FREQUENCY = 1
+  *End step
+  *Step
+  *Steady State Dynamics, direct, frequency scale=linear
+  *Steady State Dynamics, direct, frequency scale=linear
+  *Boundary,submodel, step=1
+
+ ***NOTE: Zero increment was not found on the output database. This omission 
+          will cause discontinuity of amplitudes at driven nodes for multiple 
+          step general analysis. That in turn may influence the convergence in 
+          the case of the cutbacks in the submodel.
+
+ ***NOTE: Nodal data of type UT are found in the global results.
+  *End step
+
+ ***WARNING: THE FOLLOWING NODE(S) ARE NOT PART OF ANY ELEMENT CONNECTIVITY 
+             LISTS. BOUNDARY CONDITIONS AND CONCENTRATED LOADS APPLIED TO THESE 
+             NODES MAY BE OMITTED. IF ONE OF THESE NODES IS A RIGID BODY 
+             REFERENCE NODE, THEN A SURFACE ASSOCIATED WITH RIGID BODY IS NOT 
+             PART OF A CONTACT PAIR. THESE MAY BE ACOUSTIC INFINITE ELEMENT 
+             REFERENCE NODES.
+
+        5000788
+
+ ***NOTE:  THE RESULTS FROM  Global_2.odb WERE USED TO DRIVE THIS SUBMODEL 
+          ANALYSIS.
+
+
+
+          G L O B A L   M O D E L   N O D E S   U S E D   T O   D R I V E
+          T H E   S U B M O D E L
+
+
+   3000002    3000006    3000013    3000014    3000016    3000020    3000022 
+   3000029    3000030    3000031    3000033    3000034    3000038    3000042 
+   3000045    3000047    3000049    3000050    3000052    3000056    3000058 
+   3000061    3000062    3000063    3000065    3000066    3000067    3000069 
+   3000070    3000071    3000073    3000074    3000076    3000077    3000078 
+   3000079    3000083    3000087    3000094    3000095    3000097    3000101 
+   3000103    3000110    3000111    3000112    3000114    3000115    3000119 
+   3000123    3000126    3000128    3000130    3000131    3000133    3000137 
+   3000139    3000142    3000143    3000144    3000146    3000147    3000148 
+   3000150    3000151    3000152    3000154    3000155    3000157    3000158 
+   3000159    3000160    3000162    3000166    3000168    3000175    3000176 
+   3000177    3000178    3000179    3000182    3000184    3000190    3000191 
+   3000192    3000193    3000195    3000196    3000200    3000202    3000204 
+   3000207    3000208    3000209    3000211    3000212    3000213    3000214 
+   3000216    3000218    3000220    3000222    3000223    3000224    3000225 
+   3000226    3000227    3000228    3000229    3000231    3000232    3000233 
+   3000234    3000235    3000236    3000238    3000239    3000240    3000241 
+   3000242    3000244    3000245    3000247    3000248    3000249    3000250 
+   3000253    3000254    3000255    3000256    3000258    3000259    3000261 
+   3000265    3000267    3000274    3000275    3000276    3000277    3000278 
+   3000281    3000283    3000289    3000290    3000291    3000292    3000294 
+   3000295    3000299    3000300    3000301    3000302    3000303    3000304 
+   3000306    3000307    3000308    3000310    3000311    3000312    3000313 
+   3000314    3000315    3000316    3000317    3000318    3000319    3000320 
+   3000321    3000322    3000323    3000324    3000325    3000326    3000327 
+   3000328    3000329    3000330    3000331    3000332    3000333    3000334 
+   3000335    3000337    3000338    3000339    3000340    3000341    3000343 
+   3000344    3000346    3000347    3000348    3000349    3000350    3000351 
+   3000352    3000353    3000354    3000355    3000356    3000358    3000359 
+   3000360    3000361    3000362    3000363    3000364    3000365    3000366 
+   3000368    3000369    3000371    3000375    3000377    3000384    3000385 
+   3000386    3000387    3000388    3000391    3000393    3000399    3000400 
+   3000401    3000402    3000404    3000405    3000407    3000409    3000411 
+   3000412    3000413    3000414    3000416    3000417    3000418    3000420 
+   3000421    3000422    3000423    3000424    3000425    3000426    3000427 
+   3000428    3000429    3000430    3000431    3000432    3000433    3000434 
+   3000435    3000436    3000437    3000438    3000439    3000440    3000441 
+   3000442    3000443    3000444    3000445    3000447    3000448    3000449 
+   3000450    3000451    3000453    3000454    3000456    3000457    3000458 
+   3000459    3000460    3000461    3000462    3000463    3000464    3000465 
+   3000466    3000468    3000469    3000470    3000471    3000472    3000473 
+   3000474    3000475    3000476    3000478    3000479    3000481    3000485 
+   3000487    3000490    3000491    3000492    3000494    3000495    3000496 
+   3000497    3000499    3000501    3000503    3000505    3000506    3000507 
+   3000508    3000509    3000510    3000511    3000512    3000514    3000515 
+   3000516    3000519    3000520    3000521    3000522    3000523    3000524 
+   3000526    3000527    3000528    3000530    3000531    3000532    3000533 
+   3000534    3000535    3000536    3000537    3000538    3000539    3000540 
+   3000541    3000542    3000543    3000544    3000545    3000546    3000547 
+   3000548    3000549    3000550    3000551    3000552    3000553    3000554 
+   3000555    3000557    3000558    3000559    3000560    3000561    3000562 
+   3000563    3000564    3000566    3000567    3000568    3000569    3000570 
+   3000571    3000572    3000573    3000574    3000576    3000577    3000578 
+   3000579    3000580    3000581    3000582    3000583    3000584    3000585 
+   3000586    3000588    3000589    3000590    3000591    3000592    3000593 
+   3000594    3000595    3000596    3000598    3000599    3000600    3000601 
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 17099
+          NUMBER OF NODES IS                                     7806
+          NUMBER OF NODES DEFINED BY THE USER                    3207
+          NUMBER OF INTERNAL NODES GENERATED BY THE PROGRAM      4599
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                62440
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.50    
+       SYSTEM TIME (SEC)    =      0.0    
+       TOTAL CPU TIME (SEC) =     0.50    
+       WALLCLOCK TIME (SEC) =            1
+1
+
+   Abaqus 2022.HF11                                  Date 21-Aug-2024   Time 16:26:22
+   For use by WOELFEL under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+      Step-1: Frequency Response                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T E A D Y   S T A T E   A N A L Y S I S                
+
+
+           Step-1: Frequency Response                                                     
+          DIRECT CALCULATION WITH COMPLEX MATRICES
+
+          FULL STRUCTURAL-ACOUSTIC COUPLING IS USED IN THIS
+          FORCED RESPONSE ANALYSIS
+          FREQUENCY RANGE DEFINITIONS (CYCLES/TIME)
+                LOW         HIGH        POINTS        BIAS     SCALE FACTOR  TYPE OF SCALING
+
+
+               500.        1.000E+03       51         1.00         1.00       Linear          
+
+     THIS IS A LINEAR PERTURBATION STEP.
+     ALL LOADS ARE DEFINED AS CHANGE IN LOAD TO THE REFERENCE STATE
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+
+                    TOTAL MASS OF MODEL
+
+                    (TOTAL MASS DOES NOT INCLUDE MASS OF ACOUSTIC ELEMENTS)
+                       0.000000    
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+
+                    TOTAL MASS OF THE ACOUSTIC MEDIA
+
+
+                      1.5808138E-05
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE ACOUSTIC MEDIA
+
+                       49.98364           50.03468          -49.97029    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.94E+10               56                299
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          INCREMENT NUMBER    1  AT FREQUENCY (CYCLES/TIME) =   500.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.7333076E-06 
+   5000456 SSD  4.9959570E-06 
+   5000508     -1.0283077E-05 
+   5000508 SSD  6.9658828E-06 
+   5000539      1.6916612E-06 
+   5000539 SSD  4.6239988E-06 
+   5000553      1.7599009E-06 
+   5000553 SSD  4.9858074E-06 
+   5000659     -2.2423275E-06 
+   5000659 SSD  4.1670154E-06 
+   5000764      9.4465236E-07 
+   5000764 SSD  5.3209465E-06 
+
+ MAXIMUM         6.9659E-06
+ AT NODE           5000508
+
+ MINIMUM        -1.0283E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    2  AT FREQUENCY (CYCLES/TIME) =   510.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      2.2120998E-06 
+   5000456 SSD  5.2656154E-06 
+   5000508     -1.1365203E-05 
+   5000508 SSD  7.6182044E-06 
+   5000539      2.1636290E-06 
+   5000539 SSD  4.8288364E-06 
+   5000553      2.2421566E-06 
+   5000553 SSD  5.2535579E-06 
+   5000659     -2.3285782E-06 
+   5000659 SSD  4.3079772E-06 
+   5000764      1.3164207E-06 
+   5000764 SSD  5.6503265E-06 
+
+ MAXIMUM         7.6182E-06
+ AT NODE           5000508
+
+ MINIMUM        -1.1365E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    3  AT FREQUENCY (CYCLES/TIME) =   520.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      2.7850548E-06 
+   5000456 SSD  5.5379873E-06 
+   5000508     -1.2614508E-05 
+   5000508 SSD  8.3420035E-06 
+   5000539      2.7178447E-06 
+   5000539 SSD  5.0283724E-06 
+   5000553      2.8193452E-06 
+   5000553 SSD  5.5235173E-06 
+   5000659     -2.4723665E-06 
+   5000659 SSD  4.4450756E-06 
+   5000764      1.7685493E-06 
+   5000764 SSD  5.9914516E-06 
+
+ MAXIMUM         8.3420E-06
+ AT NODE           5000508
+
+ MINIMUM        -1.2615E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    4  AT FREQUENCY (CYCLES/TIME) =   530.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      3.4785145E-06 
+   5000456 SSD  5.8099705E-06 
+   5000508     -1.4078058E-05 
+   5000508 SSD  9.1498552E-06 
+   5000539      3.3755861E-06 
+   5000539 SSD  5.2188809E-06 
+   5000553      3.5180577E-06 
+   5000553 SSD  5.7924014E-06 
+   5000659     -2.6995498E-06 
+   5000659 SSD  4.5792685E-06 
+   5000764      2.3241258E-06 
+   5000764 SSD  6.3427150E-06 
+
+ MAXIMUM         9.1499E-06
+ AT NODE           5000508
+
+ MINIMUM        -1.4078E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    5  AT FREQUENCY (CYCLES/TIME) =   540.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      4.3304570E-06 
+   5000456 SSD  6.0767725E-06 
+   5000508     -1.5823546E-05 
+   5000508 SSD  1.0058357E-05 
+   5000539      4.1673067E-06 
+   5000539 SSD  5.3950755E-06 
+   5000553      4.3766365E-06 
+   5000553 SSD  6.0551476E-06 
+   5000659     -3.0487940E-06 
+   5000659 SSD  4.7129704E-06 
+   5000764      3.0165140E-06 
+   5000764 SSD  6.7011973E-06 
+
+ MAXIMUM         1.0058E-05
+ AT NODE           5000508
+
+ MINIMUM        -1.5824E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    6  AT FREQUENCY (CYCLES/TIME) =   550.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      5.3978973E-06 
+   5000456 SSD  6.3307835E-06 
+   5000508     -1.7952288E-05 
+   5000508 SSD  1.1090305E-05 
+   5000539      5.1384284E-06 
+   5000539 SSD  5.5491645E-06 
+   5000553      5.4526491E-06 
+   5000553 SSD  6.3037307E-06 
+   5000659     -3.5799737E-06 
+   5000659 SSD  4.8512462E-06 
+   5000764      3.8959069E-06 
+   5000764 SSD  7.0617086E-06 
+
+ MAXIMUM         1.1090E-05
+ AT NODE           5000508
+
+ MINIMUM        -1.7952E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    7  AT FREQUENCY (CYCLES/TIME) =   560.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      6.7707836E-06 
+   5000456 SSD  6.5594528E-06 
+   5000508     -2.0623559E-05 
+   5000508 SSD  1.2278654E-05 
+   5000539      6.3602080E-06 
+   5000539 SSD  5.6691012E-06 
+   5000553      6.8369237E-06 
+   5000553 SSD  6.5249298E-06 
+   5000659     -4.3900250E-06 
+   5000659 SSD  5.0041477E-06 
+   5000764      5.0416414E-06 
+   5000764 SSD  7.4149579E-06 
+
+ MAXIMUM         1.2279E-05
+ AT NODE           5000508
+
+ MINIMUM        -2.0624E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    8  AT FREQUENCY (CYCLES/TIME) =   570.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      8.6002017E-06 
+   5000456 SSD  6.7409673E-06 
+   5000508     -2.4103903E-05 
+   5000508 SSD  1.3674383E-05 
+   5000539      7.9517687E-06 
+   5000539 SSD  5.7350712E-06 
+   5000553      8.6820350E-06 
+   5000553 SSD  6.6957858E-06 
+   5000659     -5.6452388E-06 
+   5000659 SSD  5.1916038E-06 
+   5000764      6.5872018E-06 
+   5000764 SSD  7.7437891E-06 
+
+ MAXIMUM         1.3674E-05
+ AT NODE           5000508
+
+ MINIMUM        -2.4104E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER    9  AT FREQUENCY (CYCLES/TIME) =   580.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.1161641E-05 
+   5000456 SSD  6.8345337E-06 
+   5000508     -2.8877574E-05 
+   5000508 SSD  1.5363813E-05 
+   5000539      1.0129488E-05 
+   5000539 SSD  5.7116740E-06 
+   5000553      1.1266204E-05 
+   5000553 SSD  6.7733849E-06 
+   5000659     -7.6538943E-06 
+   5000659 SSD  5.4546347E-06 
+   5000764      8.7763259E-06 
+   5000764 SSD  8.0146544E-06 
+
+ MAXIMUM         1.5364E-05
+ AT NODE           5000508
+
+ MINIMUM        -2.8878E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   10  AT FREQUENCY (CYCLES/TIME) =   590.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.5017501E-05 
+   5000456 SSD  6.7553783E-06 
+   5000508     -3.5929923E-05 
+   5000508 SSD  1.7512533E-05 
+   5000539      1.3333795E-05 
+   5000539 SSD  5.5279497E-06 
+   5000553      1.5157428E-05 
+   5000553 SSD  6.6685771E-06 
+   5000659     -1.1053157E-05 
+   5000659 SSD  5.8845836E-06 
+   5000764      1.2107154E-05 
+   5000764 SSD  8.1555632E-06 
+
+ MAXIMUM         1.7513E-05
+ AT NODE           5000508
+
+ MINIMUM        -3.5930E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   11  AT FREQUENCY (CYCLES/TIME) =   600.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      2.1524805E-05 
+   5000456 SSD  6.2966215E-06 
+   5000508     -4.7632220E-05 
+   5000508 SSD  2.0501636E-05 
+   5000539      1.8625204E-05 
+   5000539 SSD  5.0152401E-06 
+   5000553      2.1726284E-05 
+   5000553 SSD  6.1638390E-06 
+   5000659     -1.7393643E-05 
+   5000659 SSD  6.7153283E-06 
+   5000764      1.7782661E-05 
+   5000764 SSD  7.9869615E-06 
+
+ MAXIMUM         2.1726E-05
+ AT NODE           5000553
+
+ MINIMUM        -4.7632E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   12  AT FREQUENCY (CYCLES/TIME) =   610.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      3.5012838E-05 
+   5000456 SSD  4.7940383E-06 
+   5000508     -7.1535377E-05 
+   5000508 SSD  2.5509695E-05 
+   5000539      2.9382706E-05 
+   5000539 SSD  3.6411528E-06 
+   5000553      3.5345364E-05 
+   5000553 SSD  4.5608253E-06 
+   5000659     -3.1648019E-05 
+   5000659 SSD  8.7206164E-06 
+   5000764      2.9642749E-05 
+   5000764 SSD  6.9246577E-06 
+
+ MAXIMUM         3.5345E-05
+ AT NODE           5000553
+
+ MINIMUM        -7.1535E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   13  AT FREQUENCY (CYCLES/TIME) =   620.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      8.0814545E-05 
+   5000456 SSD -1.6499797E-06 
+   5000508     -1.5177851E-04 
+   5000508 SSD  3.9324135E-05 
+   5000539      6.5366031E-05 
+   5000539 SSD -1.6913759E-06 
+   5000553      8.1601245E-05 
+   5000553 SSD -2.2382086E-06 
+   5000659     -8.2987396E-05 
+   5000659 SSD  1.6510533E-05 
+   5000764      7.0162985E-05 
+   5000764 SSD  1.5182567E-06 
+
+ MAXIMUM         8.1601E-05
+ AT NODE           5000553
+
+ MINIMUM        -1.5178E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   14  AT FREQUENCY (CYCLES/TIME) =   630.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -3.9187584E-04 
+   5000456 SSD  7.1768753E-05 
+   5000508      6.7103039E-04 
+   5000508 SSD -8.4943403E-05 
+   5000539     -3.0297608E-04 
+   5000539 SSD  5.6231058E-05 
+   5000553     -3.9582772E-04 
+   5000553 SSD  7.4925409E-05 
+   5000659      4.6329673E-04 
+   5000659 SSD -7.0680962E-05 
+   5000764     -3.4937611E-04 
+   5000764 SSD  6.6982675E-05 
+
+ MAXIMUM         6.7103E-04
+ AT NODE           5000508
+
+ MINIMUM        -3.9583E-04
+ AT NODE           5000553
+
+
+          INCREMENT NUMBER   15  AT FREQUENCY (CYCLES/TIME) =   640.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -6.0153161E-05 
+   5000456 SSD  2.1381172E-05 
+   5000508      9.2590058E-05 
+   5000508 SSD  5.6399097E-06 
+   5000539     -4.3947275E-05 
+   5000539 SSD  1.5950028E-05 
+   5000553     -6.0788784E-05 
+   5000553 SSD  2.1924781E-05 
+   5000659      8.2875140E-05 
+   5000659 SSD -1.0948965E-05 
+   5000764     -5.5194589E-05 
+   5000764 SSD  2.2707898E-05 
+
+ MAXIMUM         9.2590E-05
+ AT NODE           5000508
+
+ MINIMUM        -6.0789E-05
+ AT NODE           5000553
+
+
+          INCREMENT NUMBER   16  AT FREQUENCY (CYCLES/TIME) =   650.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -3.3067420E-05 
+   5000456 SSD  1.7938768E-05 
+   5000508      4.4642553E-05 
+   5000508 SSD  1.5302861E-05 
+   5000539     -2.2452380E-05 
+   5000539 SSD  1.2800648E-05 
+   5000553     -3.3438166E-05 
+   5000553 SSD  1.8279125E-05 
+   5000659      5.3727847E-05 
+   5000659 SSD -7.1794955E-06 
+   5000764     -3.1330949E-05 
+   5000764 SSD  2.0135434E-05 
+
+ MAXIMUM         5.3728E-05
+ AT NODE           5000659
+
+ MINIMUM        -3.3438E-05
+ AT NODE           5000553
+
+
+          INCREMENT NUMBER   17  AT FREQUENCY (CYCLES/TIME) =   660.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -2.2816814E-05 
+   5000456 SSD  1.7136453E-05 
+   5000508      2.5836349E-05 
+   5000508 SSD  2.0906356E-05 
+   5000539     -1.4034252E-05 
+   5000539 SSD  1.1639168E-05 
+   5000553     -2.3092136E-05 
+   5000553 SSD  1.7408561E-05 
+   5000659      4.4280585E-05 
+   5000659 SSD -6.8104298E-06 
+   5000764     -2.2431151E-05 
+   5000764 SSD  1.9992678E-05 
+
+ MAXIMUM         4.4281E-05
+ AT NODE           5000659
+
+ MINIMUM        -2.3092E-05
+ AT NODE           5000553
+
+
+          INCREMENT NUMBER   18  AT FREQUENCY (CYCLES/TIME) =   670.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -1.7276488E-05 
+   5000456 SSD  1.7112594E-05 
+   5000508      1.4979634E-05 
+   5000508 SSD  2.5810958E-05 
+   5000539     -9.2234234E-06 
+   5000539 SSD  1.0956289E-05 
+   5000553     -1.7504606E-05 
+   5000553 SSD  1.7356139E-05 
+   5000659      4.0637392E-05 
+   5000659 SSD -7.7286845E-06 
+   5000764     -1.7745398E-05 
+   5000764 SSD  2.0654701E-05 
+
+ MAXIMUM         4.0637E-05
+ AT NODE           5000659
+
+ MINIMUM        -1.7745E-05
+ AT NODE           5000764
+
+
+          INCREMENT NUMBER   19  AT FREQUENCY (CYCLES/TIME) =   680.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -1.3687828E-05 
+   5000456 SSD  1.7448303E-05 
+   5000508      7.1586799E-06 
+   5000508 SSD  3.0935273E-05 
+   5000539     -5.8488649E-06 
+   5000539 SSD  1.0370786E-05 
+   5000553     -1.3889594E-05 
+   5000553 SSD  1.7681937E-05 
+   5000659      3.9726721E-05 
+   5000659 SSD -9.5828327E-06 
+   5000764     -1.4838277E-05 
+   5000764 SSD  2.1787738E-05 
+
+ MAXIMUM         3.9727E-05
+ AT NODE           5000659
+
+ MINIMUM        -1.4838E-05
+ AT NODE           5000764
+
+
+          INCREMENT NUMBER   20  AT FREQUENCY (CYCLES/TIME) =   690.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -1.1074714E-05 
+   5000456 SSD  1.7999956E-05 
+   5000508      5.0403051E-07 
+   5000508 SSD  3.6815057E-05 
+   5000539     -3.1198755E-06 
+   5000539 SSD  9.6939377E-06 
+   5000553     -1.1261579E-05 
+   5000553 SSD  1.8235773E-05 
+   5000659      4.0582758E-05 
+   5000659 SSD -1.2427790E-05 
+   5000764     -1.2862458E-05 
+   5000764 SSD  2.3321328E-05 
+
+ MAXIMUM         4.0583E-05
+ AT NODE           5000659
+
+ MINIMUM        -1.2862E-05
+ AT NODE           5000764
+
+
+          INCREMENT NUMBER   21  AT FREQUENCY (CYCLES/TIME) =   700.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -9.0005680E-06 
+   5000456 SSD  1.8707852E-05 
+   5000508     -6.0205000E-06 
+   5000508 SSD  4.4002926E-05 
+   5000539     -6.4959033E-07 
+   5000539 SSD  8.7587460E-06 
+   5000553     -9.1801802E-06 
+   5000553 SSD  1.8956325E-05 
+   5000659      4.2950617E-05 
+   5000659 SSD -1.6557400E-05 
+   5000764     -1.1460725E-05 
+   5000764 SSD  2.5292779E-05 
+
+ MAXIMUM         4.4003E-05
+ AT NODE           5000508
+
+ MINIMUM        -1.6557E-05
+ AT NODE           5000659
+
+
+          INCREMENT NUMBER   22  AT FREQUENCY (CYCLES/TIME) =   710.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -7.2372193E-06 
+   5000456 SSD  1.9545071E-05 
+   5000508     -1.3288975E-05 
+   5000508 SSD  5.3295759E-05 
+   5000539      1.8178335E-06 
+   5000539 SSD  7.3402842E-06 
+   5000553     -7.4158668E-06 
+   5000553 SSD  1.9817950E-05 
+   5000659      4.6980923E-05 
+   5000659 SSD -2.2566448E-05 
+   5000764     -1.0482146E-05 
+   5000764 SSD  2.7830687E-05 
+
+ MAXIMUM         5.3296E-05
+ AT NODE           5000508
+
+ MINIMUM        -2.2566E-05
+ AT NODE           5000659
+
+
+          INCREMENT NUMBER   23  AT FREQUENCY (CYCLES/TIME) =   720.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -5.6497230E-06 
+   5000456 SSD  2.0499067E-05 
+   5000508     -2.2428052E-05 
+   5000508 SSD  6.6079800E-05 
+   5000539      4.5299511E-06 
+   5000539 SSD  5.0526151E-06 
+   5000553     -5.8339872E-06 
+   5000553 SSD  2.0812672E-05 
+   5000659      5.3268813E-05 
+   5000659 SSD -3.1607044E-05 
+   5000764     -9.9024871E-06 
+   5000764 SSD  3.1203913E-05 
+
+ MAXIMUM         6.6080E-05
+ AT NODE           5000508
+
+ MINIMUM        -3.1607E-05
+ AT NODE           5000659
+
+
+          INCREMENT NUMBER   24  AT FREQUENCY (CYCLES/TIME) =   730.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -4.1479553E-06 
+   5000456 SSD  2.1561866E-05 
+   5000508     -3.5458735E-05 
+   5000508 SSD  8.5159960E-05 
+   5000539      7.8491873E-06 
+   5000539 SSD  1.1109734E-06 
+   5000553     -4.3468185E-06 
+   5000553 SSD  2.1943393E-05 
+   5000659      6.3243381E-05 
+   5000659 SSD -4.6101117E-05 
+   5000764     -9.8400451E-06 
+   5000764 SSD  3.5982482E-05 
+
+ MAXIMUM         8.5160E-05
+ AT NODE           5000508
+
+ MINIMUM        -4.6101E-05
+ AT NODE           5000659
+
+
+          INCREMENT NUMBER   25  AT FREQUENCY (CYCLES/TIME) =   740.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -2.6611222E-06 
+   5000456 SSD  2.2717554E-05 
+   5000508     -5.7114755E-05 
+   5000508 SSD  1.1736067E-04 
+   5000539      1.2543987E-05 
+   5000539 SSD -6.4095354E-06 
+   5000553     -2.8907931E-06 
+   5000553 SSD  2.3221959E-05 
+   5000659      8.0551663E-05 
+   5000659 SSD -7.2029333E-05 
+   5000764     -1.0719969E-05 
+   5000764 SSD  4.3565404E-05 
+
+ MAXIMUM         1.1736E-04
+ AT NODE           5000508
+
+ MINIMUM        -7.2029E-05
+ AT NODE           5000659
+
+
+          INCREMENT NUMBER   26  AT FREQUENCY (CYCLES/TIME) =   750.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -1.1120215E-06 
+   5000456 SSD  2.3897845E-05 
+   5000508     -1.0273388E-04 
+   5000508 SSD  1.8499739E-04 
+   5000539      2.1007575E-05 
+   5000539 SSD -2.3842516E-05 
+   5000553     -1.4136250E-06 
+   5000553 SSD  2.4672170E-05 
+   5000659      1.1727244E-04 
+   5000659 SSD -1.2906649E-04 
+   5000764     -1.4077966E-05 
+   5000764 SSD  5.8523207E-05 
+
+ MAXIMUM         1.8500E-04
+ AT NODE           5000508
+
+ MINIMUM        -1.2907E-04
+ AT NODE           5000659
+
+
+          INCREMENT NUMBER   27  AT FREQUENCY (CYCLES/TIME) =   760.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      7.1451980E-07 
+   5000456 SSD  2.4591081E-05 
+   5000508     -2.6876628E-04 
+   5000508 SSD  4.2856778E-04 
+   5000539      4.8092941E-05 
+   5000539 SSD -9.1195365E-05 
+   5000553      1.4113529E-07 
+   5000553 SSD  2.6364343E-05 
+   5000659      2.4965939E-04 
+   5000659 SSD -3.4136489E-04 
+   5000764     -2.9845705E-05 
+   5000764 SSD  1.0957971E-04 
+
+ MAXIMUM         4.2857E-04
+ AT NODE           5000508
+
+ MINIMUM        -3.4136E-04
+ AT NODE           5000659
+
+
+          INCREMENT NUMBER   28  AT FREQUENCY (CYCLES/TIME) =   770.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      2.6313230E-07 
+   5000456 SSD  3.3010793E-05 
+   5000508      9.1811764E-04 
+   5000508 SSD -1.2979251E-03 
+   5000539     -1.3247249E-04 
+   5000539 SSD  4.0317662E-04 
+   5000553      1.6461332E-06 
+   5000553 SSD  2.7617217E-05 
+   5000659     -6.8735010E-04 
+   5000659 SSD  1.1884073E-03 
+   5000764      9.4409855E-05 
+   5000764 SSD -2.4170950E-04 
+
+ MAXIMUM         1.1884E-03
+ AT NODE           5000659
+
+ MINIMUM        -1.2979E-03
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   29  AT FREQUENCY (CYCLES/TIME) =   780.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      3.3318694E-06 
+   5000456 SSD  3.1112145E-05 
+   5000508      2.0044098E-04 
+   5000508 SSD -2.4959951E-04 
+   5000539     -2.0267531E-05 
+   5000539 SSD  1.0705809E-04 
+   5000553      3.5314546E-06 
+   5000553 SSD  3.0051625E-05 
+   5000659     -1.1778599E-04 
+   5000659 SSD  2.6542634E-04 
+   5000764      2.1806855E-05 
+   5000764 SSD -2.5838788E-05 
+
+ MAXIMUM         2.6543E-04
+ AT NODE           5000659
+
+ MINIMUM        -2.4960E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   30  AT FREQUENCY (CYCLES/TIME) =   790.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      5.4879459E-06 
+   5000456 SSD  3.3083511E-05 
+   5000508      1.2286091E-04 
+   5000508 SSD -1.3286632E-04 
+   5000539     -6.1083305E-06 
+   5000539 SSD  7.6838041E-05 
+   5000553      5.5576093E-06 
+   5000553 SSD  3.2493670E-05 
+   5000659     -5.3835393E-05 
+   5000659 SSD  1.6661820E-04 
+   5000764      1.5598987E-05 
+   5000764 SSD -5.4311361E-08 
+
+ MAXIMUM         1.6662E-04
+ AT NODE           5000659
+
+ MINIMUM        -1.3287E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   31  AT FREQUENCY (CYCLES/TIME) =   800.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      7.8481664E-06 
+   5000456 SSD  3.5721124E-05 
+   5000508      9.4088654E-05 
+   5000508 SSD -8.6297534E-05 
+   5000539      9.1180675E-07 
+   5000539 SSD  6.7116233E-05 
+   5000553      7.8668853E-06 
+   5000553 SSD  3.5309455E-05 
+   5000659     -2.7819460E-05 
+   5000659 SSD  1.3055599E-04 
+   5000764      1.4695244E-05 
+   5000764 SSD  1.1713447E-05 
+
+ MAXIMUM         1.3056E-04
+ AT NODE           5000659
+
+ MINIMUM        -8.6298E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   32  AT FREQUENCY (CYCLES/TIME) =   810.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.0570040E-05 
+   5000456 SSD  3.8946155E-05 
+   5000508      7.9982070E-05 
+   5000508 SSD -5.9927744E-05 
+   5000539      6.1466198E-06 
+   5000539 SSD  6.3796073E-05 
+   5000553      1.0560293E-05 
+   5000553 SSD  3.8626619E-05 
+   5000659     -1.2587478E-05 
+   5000659 SSD  1.1327866E-04 
+   5000764      1.5652955E-05 
+   5000764 SSD  1.9761371E-05 
+
+ MAXIMUM         1.1328E-04
+ AT NODE           5000659
+
+ MINIMUM        -5.9928E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   33  AT FREQUENCY (CYCLES/TIME) =   820.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.3802846E-05 
+   5000456 SSD  4.2872492E-05 
+   5000508      7.2537290E-05 
+   5000508 SSD -4.1757239E-05 
+   5000539      1.0979508E-05 
+   5000539 SSD  6.3662169E-05 
+   5000553      1.3773541E-05 
+   5000553 SSD  4.2607932E-05 
+   5000659     -1.5849826E-06 
+   5000659 SSD  1.0447954E-04 
+   5000764      1.7767006E-05 
+   5000764 SSD  2.6667245E-05 
+
+ MAXIMUM         1.0448E-04
+ AT NODE           5000659
+
+ MINIMUM        -4.1757E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   34  AT FREQUENCY (CYCLES/TIME) =   830.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.7747954E-05 
+   5000456 SSD  4.7719032E-05 
+   5000508      6.9019320E-05 
+   5000508 SSD -2.7292311E-05 
+   5000539      1.6056289E-05 
+   5000539 SSD  6.5735764E-05 
+   5000553      1.7702894E-05 
+   5000553 SSD  4.7489683E-05 
+   5000659      7.6904614E-06 
+   5000659 SSD  1.0063059E-04 
+   5000764      2.0932516E-05 
+   5000764 SSD  3.3535725E-05 
+
+ MAXIMUM         1.0063E-04
+ AT NODE           5000659
+
+ MINIMUM        -2.7292E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   35  AT FREQUENCY (CYCLES/TIME) =   840.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      2.2707265E-05 
+   5000456 SSD  5.3840957E-05 
+   5000508      6.8411766E-05 
+   5000508 SSD -1.4261971E-05 
+   5000539      2.1879352E-05 
+   5000539 SSD  6.9834720E-05 
+   5000553      2.2647625E-05 
+   5000553 SSD  5.3634590E-05 
+   5000659      1.6572021E-05 
+   5000659 SSD  1.0040809E-04 
+   5000764      2.5315723E-05 
+   5000764 SSD  4.1118471E-05 
+
+ MAXIMUM         1.0041E-04
+ AT NODE           5000659
+
+ MINIMUM        -1.4262E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   36  AT FREQUENCY (CYCLES/TIME) =   850.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      2.9166224E-05 
+   5000456 SSD  6.1823516E-05 
+   5000508      7.0519588E-05 
+   5000508 SSD -1.0936433E-06 
+   5000539      2.9039858E-05 
+   5000539 SSD  7.6266338E-05 
+   5000553      2.9091276E-05 
+   5000553 SSD  6.1631399E-05 
+   5000659      2.6079506E-05 
+   5000659 SSD  1.0353181E-04 
+   5000764      3.1334685E-05 
+   5000764 SSD  5.0204369E-05 
+
+ MAXIMUM         1.0353E-04
+ AT NODE           5000659
+
+ MINIMUM        -1.0936E-06
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   37  AT FREQUENCY (CYCLES/TIME) =   860.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      3.7965661E-05 
+   5000456 SSD  7.2689420E-05 
+   5000508      7.5796892E-05 
+   5000508 SSD  1.3796592E-05 
+   5000539      3.8443128E-05 
+   5000539 SSD  8.5893435E-05 
+   5000553      3.7872654E-05 
+   5000553 SSD  7.2504144E-05 
+   5000659      3.7364797E-05 
+   5000659 SSD  1.1053154E-04 
+   5000764      3.9796293E-05 
+   5000764 SSD  6.1930738E-05 
+
+ MAXIMUM         1.1053E-04
+ AT NODE           5000659
+
+ MINIMUM         1.3797E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   38  AT FREQUENCY (CYCLES/TIME) =   870.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      5.0706063E-05 
+   5000456 SSD  8.8392093E-05 
+   5000508      8.5609047E-05 
+   5000508 SSD  3.2705895E-05 
+   5000539      5.1737890E-05 
+   5000539 SSD  1.0056777E-04 
+   5000553      5.0589180E-05 
+   5000553 SSD  8.8205796E-05 
+   5000659      5.2234983E-05 
+   5000659 SSD  1.2305645E-04 
+   5000764      5.2288648E-05 
+   5000764 SSD  7.8319052E-05 
+
+ MAXIMUM         1.2306E-04
+ AT NODE           5000659
+
+ MINIMUM         3.2706E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   39  AT FREQUENCY (CYCLES/TIME) =   880.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      7.0862428E-05 
+   5000456 SSD  1.1317866E-04 
+   5000508      1.0328260E-04 
+   5000508 SSD  6.0106147E-05 
+   5000539      7.2450506E-05 
+   5000539 SSD  1.2446156E-04 
+   5000553      7.0709755E-05 
+   5000553 SSD  1.1298037E-04 
+   5000659      7.4338090E-05 
+   5000659 SSD  1.4514908E-04 
+   5000764      7.2297444E-05 
+   5000764 SSD  1.0365615E-04 
+
+ MAXIMUM         1.4515E-04
+ AT NODE           5000659
+
+ MINIMUM         6.0106E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   40  AT FREQUENCY (CYCLES/TIME) =   890.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.0767401E-04 
+   5000456 SSD  1.5834721E-04 
+   5000508      1.3796700E-04 
+   5000508 SSD  1.0745565E-04 
+   5000539      1.0991237E-04 
+   5000539 SSD  1.6879589E-04 
+   5000553      1.0745788E-04 
+   5000553 SSD  1.5811586E-04 
+   5000659      1.1314444E-04 
+   5000659 SSD  1.8794547E-04 
+   5000764      1.0912187E-04 
+   5000764 SSD  1.4925513E-04 
+
+ MAXIMUM         1.8795E-04
+ AT NODE           5000659
+
+ MINIMUM         1.0746E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   41  AT FREQUENCY (CYCLES/TIME) =   900.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      1.9658446E-04 
+   5000456 SSD  2.6724705E-04 
+   5000508      2.2508786E-04 
+   5000508 SSD  2.1825241E-04 
+   5000539      1.9987366E-04 
+   5000539 SSD  2.7675490E-04 
+   5000553      1.9621727E-04 
+   5000553 SSD  2.6692106E-04 
+   5000659      2.0474292E-04 
+   5000659 SSD  2.9457972E-04 
+   5000764      1.9846896E-04 
+   5000764 SSD  2.5842647E-04 
+
+ MAXIMUM         2.9458E-04
+ AT NODE           5000659
+
+ MINIMUM         1.9622E-04
+ AT NODE           5000553
+
+
+          INCREMENT NUMBER   42  AT FREQUENCY (CYCLES/TIME) =   910.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456      7.1872190E-04 
+   5000456 SSD  9.0603689E-04 
+   5000508      7.4631231E-04 
+   5000508 SSD  8.5921304E-04 
+   5000539      7.2665529E-04 
+   5000539 SSD  9.1301137E-04 
+   5000553      7.1747252E-04 
+   5000553 SSD  9.0511459E-04 
+   5000659      7.3666887E-04 
+   5000659 SSD  9.2980271E-04 
+   5000764      7.2437386E-04 
+   5000764 SSD  8.9669601E-04 
+
+ MAXIMUM         9.2980E-04
+ AT NODE           5000659
+
+ MINIMUM         7.1747E-04
+ AT NODE           5000553
+
+
+          INCREMENT NUMBER   43  AT FREQUENCY (CYCLES/TIME) =   920.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -5.2919346E-04 
+   5000456 SSD -6.2013145E-04 
+   5000508     -5.0510019E-04 
+   5000508 SSD -6.6724867E-04 
+   5000539     -5.3143205E-04 
+   5000539 SSD -6.0882867E-04 
+   5000553     -5.2833644E-04 
+   5000553 SSD -6.1960570E-04 
+   5000659     -5.3115290E-04 
+   5000659 SSD -5.9351843E-04 
+   5000764     -5.3328308E-04 
+   5000764 SSD -6.2702493E-04 
+
+ MAXIMUM        -5.0510E-04
+ AT NODE           5000508
+
+ MINIMUM        -6.6725E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   44  AT FREQUENCY (CYCLES/TIME) =   930.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -2.0720295E-04 
+   5000456 SSD -2.2613279E-04 
+   5000508     -1.8403397E-04 
+   5000508 SSD -2.7173168E-04 
+   5000539     -2.0651066E-04 
+   5000539 SSD -2.1649068E-04 
+   5000553     -2.0688980E-04 
+   5000553 SSD -2.2597365E-04 
+   5000659     -2.0292405E-04 
+   5000659 SSD -2.0206278E-04 
+   5000764     -2.0902450E-04 
+   5000764 SSD -2.3328433E-04 
+
+ MAXIMUM        -1.8403E-04
+ AT NODE           5000508
+
+ MINIMUM        -2.7173E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   45  AT FREQUENCY (CYCLES/TIME) =   940.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -1.3380926E-04 
+   5000456 SSD -1.3619141E-04 
+   5000508     -1.1183863E-04 
+   5000508 SSD -1.8073365E-04 
+   5000539     -1.3227916E-04 
+   5000539 SSD -1.2721739E-04 
+   5000553     -1.3362011E-04 
+   5000553 SSD -1.3611222E-04 
+   5000659     -1.2752407E-04 
+   5000659 SSD -1.1367484E-04 
+   5000764     -1.3525101E-04 
+   5000764 SSD -1.4320632E-04 
+
+ MAXIMUM        -1.1184E-04
+ AT NODE           5000508
+
+ MINIMUM        -1.8073E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   46  AT FREQUENCY (CYCLES/TIME) =   950.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -1.0126373E-04 
+   5000456 SSD -9.6209517E-05 
+   5000508     -8.0460907E-05 
+   5000508 SSD -1.3986839E-04 
+   5000539     -9.9250283E-05 
+   5000539 SSD -8.7716543E-05 
+   5000553     -1.0112948E-04 
+   5000553 SSD -9.6163571E-05 
+   5000659     -9.3720765E-05 
+   5000659 SSD -7.5010334E-05 
+   5000764     -1.0262823E-04 
+   5000764 SSD -1.0304135E-04 
+
+ MAXIMUM        -7.5010E-05
+ AT NODE           5000659
+
+ MINIMUM        -1.3987E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   47  AT FREQUENCY (CYCLES/TIME) =   960.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -8.2866273E-05 
+   5000456 SSD -7.3530959E-05 
+   5000508     -6.3173544E-05 
+   5000508 SSD -1.1642604E-04 
+   5000539     -8.0499066E-05 
+   5000539 SSD -6.5440129E-05 
+   5000553     -8.2762907E-05 
+   5000553 SSD -7.3502306E-05 
+   5000659     -7.4358947E-05 
+   5000659 SSD -5.3524200E-05 
+   5000764     -8.4253361E-05 
+   5000764 SSD -8.0174577E-05 
+
+ MAXIMUM        -5.3524E-05
+ AT NODE           5000659
+
+ MINIMUM        -1.1643E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   48  AT FREQUENCY (CYCLES/TIME) =   970.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -7.1022443E-05 
+   5000456 SSD -5.8867751E-05 
+   5000508     -5.2381839E-05 
+   5000508 SSD -1.0109305E-04 
+   5000539     -6.8366257E-05 
+   5000539 SSD -5.1133766E-05 
+   5000553     -7.0938780E-05 
+   5000553 SSD -5.8849164E-05 
+   5000659     -6.1710390E-05 
+   5000659 SSD -3.9968798E-05 
+   5000764     -7.2474996E-05 
+   5000764 SSD -6.5327655E-05 
+
+ MAXIMUM        -3.9969E-05
+ AT NODE           5000659
+
+ MINIMUM        -1.0109E-04
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   49  AT FREQUENCY (CYCLES/TIME) =   980.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -6.2747292E-05 
+   5000456 SSD -4.8569747E-05 
+   5000508     -4.5105588E-05 
+   5000508 SSD -9.0202528E-05 
+   5000539     -5.9840927E-05 
+   5000539 SSD -4.1162352E-05 
+   5000553     -6.2677201E-05 
+   5000553 SSD -4.8557398E-05 
+   5000659     -5.2734908E-05 
+   5000659 SSD -3.0715467E-05 
+   5000764     -6.4286205E-05 
+   5000764 SSD -5.4852848E-05 
+
+ MAXIMUM        -3.0715E-05
+ AT NODE           5000659
+
+ MINIMUM        -9.0203E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   50  AT FREQUENCY (CYCLES/TIME) =   990.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -5.6628780E-05 
+   5000456 SSD -4.0910583E-05 
+   5000508     -3.9938277E-05 
+   5000508 SSD -8.2015688E-05 
+   5000539     -5.3498435E-05 
+   5000539 SSD -3.3807874E-05 
+   5000553     -5.6568520E-05 
+   5000553 SSD -4.0902238E-05 
+   5000659     -4.5992686E-05 
+   5000659 SSD -2.4051757E-05 
+   5000764     -5.8264825E-05 
+   5000764 SSD -4.7024009E-05 
+
+ MAXIMUM        -2.4052E-05
+ AT NODE           5000659
+
+ MINIMUM        -8.2016E-05
+ AT NODE           5000508
+
+
+          INCREMENT NUMBER   51  AT FREQUENCY (CYCLES/TIME) =   1000.0000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET POR
+  
+       NODE FOOT-  POR          
+            NOTE
+  
+   5000456     -5.1912242E-05 
+   5000456 SSD -3.4967888E-05 
+   5000508     -3.6130467E-05 
+   5000508 SSD -7.5600399E-05 
+   5000539     -4.8577190E-05 
+   5000539 SSD -2.8153268E-05 
+   5000553     -5.1859351E-05 
+   5000553 SSD -3.4962152E-05 
+   5000659     -4.0713179E-05 
+   5000659 SSD -1.9065279E-05 
+   5000764     -5.3650951E-05 
+   5000764 SSD -4.0918244E-05 
+
+ MAXIMUM        -1.9065E-05
+ AT NODE           5000659
+
+ MINIMUM        -7.5600E-05
+ AT NODE           5000508
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH      2 WARNING MESSAGES ON THE DAT FILE
+                              AND       1 WARNING MESSAGES ON THE MSG FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      85.    
+       SYSTEM TIME (SEC)    =      4.1    
+       TOTAL CPU TIME (SEC) =      89.    
+       WALLCLOCK TIME (SEC) =           30

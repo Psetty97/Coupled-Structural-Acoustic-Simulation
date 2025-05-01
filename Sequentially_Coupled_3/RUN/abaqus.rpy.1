@@ -1,0 +1,227 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/Viewer Release 2022.HF11 replay file
+# Internal Version: 2023_10_26-15.11.10 RELr424 177048
+# Run by sp-stud on Wed Aug 21 16:22:29 2024
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=184.807281494141, 
+    height=168.210006713867)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from viewerModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+#: Executing "onCaeStartup()" in the home directory ...
+o2 = session.openOdb(name='submo_2.odb')
+#: Model: C:/Work/CavityModeling/Cube/Sequentially_Coupled_3/RUN/submo_2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       5
+#: Number of Node Sets:          3
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o2)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    renderStyle=WIREFRAME)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    renderStyle=SHADED)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    visibleEdges=EXTERIOR)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=803.991, 
+    farPlane=1386.08, width=686.268, height=377.346, cameraPosition=(948.586, 
+    660.665, 87.7262), cameraUpVector=(-0.759617, 0.568073, -0.316662), 
+    cameraTarget=(56.199, 37.5109, -43.5261))
+session.odbs['C:/Work/CavityModeling/Cube/Sequentially_Coupled_3/RUN/submo_2.odb'].close(
+    )
+o1 = session.openOdb(
+    name='C:/Work/CavityModeling/Cube/Sequentially_Coupled_3/RUN/submo_2.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Work/CavityModeling/Cube/Sequentially_Coupled_3/RUN/submo_2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       5
+#: Number of Node Sets:          3
+#: Number of Steps:              1
+odb = session.odbs['C:/Work/CavityModeling/Cube/Sequentially_Coupled_3/RUN/submo_2.odb']
+xy1 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Energy lost to quiet boundaries: ALLQB for Whole Model', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c1 = session.Curve(xyData=xy1)
+xyp = session.XYPlot('XYPlot-1')
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+session.charts['Chart-1'].axes2[0].axisData.setValues(scale=DB)
+session.charts['Chart-1'].axes2[0].axisData.setValues(dbReference=1e-09)
+odb = session.odbs['C:/Work/CavityModeling/Cube/Sequentially_Coupled_3/RUN/submo_2.odb']
+xy1 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Energy lost to quiet boundaries: ALLQB for Whole Model', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c1 = session.Curve(xyData=xy1)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+odb = session.odbs['C:/Work/CavityModeling/Cube/Sequentially_Coupled_3/RUN/submo_2.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.xyDataObjects.changeKey(fromName='_temp_2', toName='ALLQB Submodel')
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['ALLQB Submodel']
+c1 = session.Curve(xyData=xy1)
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+o1 = session.openOdb(
+    name='C:/Work/CavityModeling/Cube/Fully_Coupled_2/RUN/fully_coupled_2.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Work/CavityModeling/Cube/Fully_Coupled_2/RUN/fully_coupled_2.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+#: The deformed variable is set to UT. Analytical Rigid Surfaces and Coordinate Systems will not be displayed in the Orientation used for analysis.
+odb = session.odbs['C:/Work/CavityModeling/Cube/Fully_Coupled_2/RUN/fully_coupled_2.odb']
+xy1 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Radiated power: RADPOW through acoustic-structural interface boundary in ELSET OUTER_INFINITE', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c1 = session.Curve(xyData=xy1)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+session.xyDataObjects.changeKey(fromName='_temp_1', 
+    toName='RADPOW Fully coupled')
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+xy1 = session.xyDataObjects['ALLQB Submodel']
+c1 = session.Curve(xyData=xy1)
+xy2 = session.xyDataObjects['RADPOW Fully coupled']
+c2 = session.Curve(xyData=xy2)
+chart.setValues(curvesToPlot=(c1, c2, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.curves['ALLQB Submodel'].lineStyle.setValues(thickness=0.5, 
+    suppressQuery=True)
+session.curves['RADPOW Fully coupled'].lineStyle.setValues(thickness=0.5)
+session.xyPlots['XYPlot-1'].area.border.setValues(show=True)
+session.charts['Chart-1'].minorAxis1GridStyle.setValues(show=True)
+session.charts['Chart-1'].minorAxis2GridStyle.setValues(show=True)
+o1 = session.openOdb(
+    name='C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       7
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+#: The deformed variable is set to UT. Analytical Rigid Surfaces and Coordinate Systems will not be displayed in the Orientation used for analysis.
+session.odbs['C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb'].close(
+    )
+odb = session.odbs['C:/Work/CavityModeling/Cube/Fully_Coupled_2/RUN/fully_coupled_2.odb']
+session.viewports['Viewport: 1'].setValues(displayedObject=odb)
+#: The deformed variable is set to UT. Analytical Rigid Surfaces and Coordinate Systems will not be displayed in the Orientation used for analysis.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=761.985, 
+    farPlane=1430.64, width=736.094, height=404.743, viewOffsetX=18.1216, 
+    viewOffsetY=0.443638)
+o1 = session.openOdb(
+    name='C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       8
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+#: The deformed variable is set to UT. Analytical Rigid Surfaces and Coordinate Systems will not be displayed in the Orientation used for analysis.
+odb = session.odbs['C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb']
+xy1 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Radiated power: RADPOW through acoustic-structural interface boundary in ELSET RADPOW_1_ELEMENT', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c1 = session.Curve(xyData=xy1)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+chart.setValues(curvesToPlot=(c1, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+session.odbs['C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb'].close(
+    )
+o1 = session.openOdb(
+    name='C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       8
+#: Number of Node Sets:          4
+#: Number of Steps:              1
+#: The deformed variable is set to UT. Analytical Rigid Surfaces and Coordinate Systems will not be displayed in the Orientation used for analysis.
+odb = session.odbs['C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb']
+xy1 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Pore or Acoustic Pressure: POR at Node 5000456 in NSET POR', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c1 = session.Curve(xyData=xy1)
+xy2 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Radiated power: RADPOW through acoustic-structural interface boundary in ELSET OUTER_INFINITE', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c2 = session.Curve(xyData=xy2)
+xy3 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Radiated power: RADPOW through acoustic-structural interface boundary in ELSET RADPOW_1_ELEMENT', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c3 = session.Curve(xyData=xy3)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+chart.setValues(curvesToPlot=(c1, c2, c3, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.viewports['Viewport: 1'].setValues(displayedObject=xyp)
+odb = session.odbs['C:/Work/CavityModeling/Cube/Fully_coupled_3/RUN/fully_coupled_3.odb']
+xy1 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Radiated power: RADPOW through acoustic-structural interface boundary in ELSET OUTER_INFINITE', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c1 = session.Curve(xyData=xy1)
+xy2 = xyPlot.XYDataFromHistory(odb=odb, 
+    outputVariableName='Radiated power: RADPOW through acoustic-structural interface boundary in ELSET RADPOW_1_ELEMENT', 
+    steps=('Step-1', ), suppressQuery=True, __linkedVpName__='Viewport: 1')
+c2 = session.Curve(xyData=xy2)
+xyp = session.xyPlots['XYPlot-1']
+chartName = xyp.charts.keys()[0]
+chart = xyp.charts[chartName]
+chart.setValues(curvesToPlot=(c1, c2, ), )
+session.charts[chartName].autoColor(lines=True, symbols=True)
+session.curves['_temp_5'].lineStyle.setValues(thickness=0.5)
+session.curves['_temp_1'].lineStyle.setValues(thickness=0.5)
+session.curves['_temp_1'].lineStyle.setValues(thickness=0.8)
+session.curves['_temp_1'].lineStyle.setValues(thickness=0.5)
+session.curves['_temp_5'].lineStyle.setValues(thickness=0.2)

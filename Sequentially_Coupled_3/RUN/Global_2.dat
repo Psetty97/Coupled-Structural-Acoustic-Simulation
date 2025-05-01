@@ -1,0 +1,1690 @@
+1
+
+   Abaqus 2022.HF11                                  Date 08-Oct-2024   Time 11:51:10
+   For use by WOELFEL under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine KOHLSTETTERIX 
+                          you are authorized to run
+                          Abaqus/Foundation until 01-Jan-2025
+
+                          Your site id is: 200000000053191 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      http://www.3ds.com/products/simulia/locations/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                    Abaqus 2022.HF11                     * 
+                *                                                         * 
+                *       BUILD ID: 2023_10_26-15.11.10 RELr424 177048      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2022.HF11 manuals                       * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *INCLUDE, INPUT ="../MODEL/just_cube.inp"
+  *NODE
+  *ELEMENT,TYPE=S4R,ELSET=cube_mesh
+  *NSET, NSET=accn
+  *ELSET, ELSET = _str_acou_SPOS, GENERATE
+  *MATERIAL, NAME=Steel
+  *DENSITY
+  *ELASTIC, TYPE = ISOTROPIC
+  *SHELL SECTION, ELSET=cube_mesh, MATERIAL=Steel
+  *SHELL SECTION, ELSET=cube_mesh, MATERIAL=Steel
+  *CONTACT PAIR, INTERACTION = dummy_One
+  *Surface, NAME = str_acou, TYPE = ELEMENT
+  *CONTACT PAIR, INTERACTION = dummy_One
+  *Surface, NAME = str_acou, TYPE = ELEMENT
+  *Surface, NAME = str_acou, TYPE = ELEMENT
+  *CONTACT PAIR, INTERACTION = dummy_One
+
+ ***NOTE: THE ROTATIONAL DEGREES OF FREEDOM OF THE NODES THAT CONSTITUTE THE 
+          SURFACES WILL NOT BE CONSTRAINED BETWEEN THE SECONDARY AND MAIN PAIR 
+          (STR_ACOU, STR_ACOU).
+  *SURFACE INTERACTION, NAME = dummy_One
+  *CONTACT PAIR, INTERACTION = dummy_One
+
+ ***NOTE: THE ROTATIONAL DEGREES OF FREEDOM OF THE NODES THAT CONSTITUTE THE 
+          SURFACES WILL NOT BE CONSTRAINED BETWEEN THE SECONDARY AND MAIN PAIR 
+          (STR_ACOU, STR_ACOU).
+  *CONTACT PAIR, INTERACTION = dummy_One
+
+ ***NOTE: THE ROTATIONAL DEGREES OF FREEDOM OF THE NODES THAT CONSTITUTE THE 
+          SURFACES WILL NOT BE CONSTRAINED BETWEEN THE SECONDARY AND MAIN PAIR 
+          (STR_ACOU, STR_ACOU).
+  *SURFACE INTERACTION, NAME = dummy_One
+  *SURFACE INTERACTION, NAME = dummy_One
+  *CONTACT PAIR, INTERACTION = dummy_One
+
+ ***NOTE: THE ROTATIONAL DEGREES OF FREEDOM OF THE NODES THAT CONSTITUTE THE 
+          SURFACES WILL NOT BE CONSTRAINED BETWEEN THE SECONDARY AND MAIN PAIR 
+          (STR_ACOU, STR_ACOU).
+
+ ***WARNING: NODE 3000243 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000244 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000245 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000246 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000247 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000248 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000249 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000250 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000251 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000252 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000253 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (0.70711,0.0000,0.70711).
+
+ ***NOTE: THE PRINTING OF SIMILAR MESSAGES IS BEING SUPPRESSED DUE TO EXCESSIVE 
+          REPORTING.
+
+ ***WARNING: 116 nodes may have incorrect normal definitions. The nodes have 
+             been identified in node set WarnNodeIncorrectNormal.
+
+ ***NOTE: THE ROTATIONAL DEGREES OF FREEDOM OF THE NODES THAT CONSTITUTE THE 
+          SURFACES WILL NOT BE CONSTRAINED BETWEEN THE SECONDARY AND MAIN PAIR 
+          (STR_ACOU, STR_ACOU).
+
+ ***WARNING: NODE 3000243 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000244 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000245 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000246 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000247 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000248 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000249 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000250 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000251 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (-0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000252 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (0.70711,0.0000,0.70711).
+
+ ***WARNING: NODE 3000253 ON SURFACE STR_ACOU HAS FACETS WITH NORMAL VECTORS 
+             DIFFERING BY MORE THAN 30 DEGREES. CONVERGENCE DIFFICULTIES MAY 
+             OCCUR AT THIS NODE WITH FINITE-SLIDING CONTACT. THE NORMAL CONTACT 
+             DIRECTION AT THIS NODE WILL BE (0.70711,0.0000,0.70711).
+
+ ***NOTE: THE ABOVE WARNING MESSAGE IS BEING SUPPRESSED DUE TO EXCESSIVE 
+          REPORTING.
+  *SURFACE INTERACTION, NAME = dummy_One
+  *CONTACT PAIR, INTERACTION = dummy_One
+
+ ***NOTE: THE ROTATIONAL DEGREES OF FREEDOM OF THE NODES THAT CONSTITUTE THE 
+          SURFACES WILL NOT BE CONSTRAINED BETWEEN THE SECONDARY AND MAIN PAIR 
+          (STR_ACOU, STR_ACOU).
+  *Surface, NAME = str_acou, TYPE = ELEMENT
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY
+
+ ***WARNING: 116 nodes may have incorrect normal definitions. The nodes have 
+             been identified in node set WarnNodeIncorrectNormal.
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY
+  *Step
+  *Steady State Dynamics, direct, frequency scale=linear
+  *Output,field,frequency=1
+  *OUTPUT, HISTORY
+  *Step
+  *Step
+   Step-1: Frequency Response                                                     
+  *Steady State Dynamics, direct, frequency scale=linear
+  *Output,field,frequency=1
+  *CONTACT OUTPUT
+  *Node output
+  *OUTPUT, HISTORY
+  *NODE OUTPUT, NSET = accn
+  *NODE PRINT, NSET = accn, FREQUENCY = 1
+  *End step
+  *Step
+  *Steady State Dynamics, direct, frequency scale=linear
+  *Steady State Dynamics, direct, frequency scale=linear
+  *CLOAD, OP=NEW
+  *End step
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                  1202
+          NUMBER OF ELEMENTS DEFINED BY THE USER AND *TIE         600
+          NUMBER OF INTERNAL ELEMENTS GENERATED FOR CONTACT       602
+          NUMBER OF NODES IS                                     1806
+          NUMBER OF NODES DEFINED BY THE USER                     602
+          NUMBER OF INTERNAL NODES GENERATED BY THE PROGRAM      1204
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                10836
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.10    
+       SYSTEM TIME (SEC)    =     0.10    
+       TOTAL CPU TIME (SEC) =     0.20    
+       WALLCLOCK TIME (SEC) =            0
+1
+
+   Abaqus 2022.HF11                                  Date 08-Oct-2024   Time 11:51:12
+   For use by WOELFEL under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+      Step-1: Frequency Response                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T E A D Y   S T A T E   A N A L Y S I S                
+
+
+           Step-1: Frequency Response                                                     
+          DIRECT CALCULATION WITH COMPLEX MATRICES
+
+          FULL STRUCTURAL-ACOUSTIC COUPLING IS USED IN THIS
+          FORCED RESPONSE ANALYSIS
+          FREQUENCY RANGE DEFINITIONS (CYCLES/TIME)
+                LOW         HIGH        POINTS        BIAS     SCALE FACTOR  TYPE OF SCALING
+
+
+               500.        1.000E+03       51         1.00         1.00       Linear          
+
+     THIS IS A LINEAR PERTURBATION STEP.
+     ALL LOADS ARE DEFINED AS CHANGE IN LOAD TO THE REFERENCE STATE
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      4.7100000E-04
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       50.00000           50.00000          -50.00000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                       3.673839           3.673839           3.673839    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                      -1.177500           1.177500           1.177500    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                       1.318839           1.318839           1.318839    
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                      2.4424907E-15     -1.1102230E-15     -9.3258734E-15
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          7.90E+08               19                 53
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          INCREMENT NUMBER    1  AT FREQUENCY (CYCLES/TIME) =   500.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.0778598E+03  1.3739517E-11 -1.8831017E-12 -5.8871731E-14 -7.8192437E-12  2.3596839E-12 
+
+ MAXIMUM          2078.      1.3740E-11   0.000       0.000       0.000      2.3597E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -1.8831E-12 -5.8872E-14 -7.8192E-12   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    2  AT FREQUENCY (CYCLES/TIME) =   510.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.2302692E+03  2.0133349E-11 -5.5644656E-11  3.0274268E-13  1.4059695E-12 -1.3341197E-11 
+
+ MAXIMUM          2230.      2.0133E-11   0.000      3.0274E-13  1.4060E-12   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -5.5645E-11   0.000       0.000     -1.3341E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    3  AT FREQUENCY (CYCLES/TIME) =   520.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.4047858E+03 -5.1477703E-11  2.9485181E-11 -7.7923275E-15  3.4784578E-11  1.9373620E-11 
+
+ MAXIMUM          2405.       0.000      2.9485E-11   0.000      3.4785E-11  1.9374E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -5.1478E-11   0.000     -7.7923E-15   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    4  AT FREQUENCY (CYCLES/TIME) =   530.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.6076249E+03  6.4912637E-11 -1.8692707E-11 -5.1577505E-13 -1.7169456E-11 -3.1782631E-11 
+
+ MAXIMUM          2608.      6.4913E-11   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -1.8693E-11 -5.1578E-13 -1.7169E-11 -3.1783E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    5  AT FREQUENCY (CYCLES/TIME) =   540.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.8477118E+03  1.7112154E-10 -2.3002146E-11 -1.8685007E-13  2.0574733E-11  7.5903977E-12 
+
+ MAXIMUM          2848.      1.7112E-10   0.000       0.000      2.0575E-11  7.5904E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -2.3002E-11 -1.8685E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    6  AT FREQUENCY (CYCLES/TIME) =   550.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  3.1383874E+03  1.3967122E-10  3.7856393E-11  9.3297631E-14 -4.8283750E-12 -2.8772158E-11 
+
+ MAXIMUM          3138.      1.3967E-10  3.7856E-11  9.3298E-14   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000       0.000       0.000     -4.8284E-12 -2.8772E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    7  AT FREQUENCY (CYCLES/TIME) =   560.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  3.5006046E+03 -1.1216617E-10  5.0025971E-12  2.0868951E-14 -2.1608238E-11  4.3993377E-11 
+
+ MAXIMUM          3501.       0.000      5.0026E-12  2.0869E-14   0.000      4.3993E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -1.1217E-10   0.000       0.000     -2.1608E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    8  AT FREQUENCY (CYCLES/TIME) =   570.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  3.9694048E+03  1.7804395E-10  4.4693359E-11 -2.2595997E-13 -1.5754160E-11  3.0332949E-11 
+
+ MAXIMUM          3969.      1.7804E-10  4.4693E-11   0.000       0.000      3.0333E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000       0.000     -2.2596E-13 -1.5754E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER    9  AT FREQUENCY (CYCLES/TIME) =   580.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  4.6084267E+03 -3.7580691E-11 -4.5091828E-12  6.4216409E-13  3.5677489E-11 -4.2440270E-11 
+
+ MAXIMUM          4608.       0.000       0.000      6.4216E-13  3.5677E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -3.7581E-11 -4.5092E-12   0.000       0.000     -4.2440E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   10  AT FREQUENCY (CYCLES/TIME) =   590.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  5.5471395E+03 -5.8391811E-11 -1.3229050E-10 -5.3320844E-14  1.4206777E-11  6.1515408E-12 
+
+ MAXIMUM          5547.       0.000       0.000       0.000      1.4207E-11  6.1515E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -5.8392E-11 -1.3229E-10 -5.3321E-14   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   11  AT FREQUENCY (CYCLES/TIME) =   600.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  7.0971061E+03 -1.2099726E-10  5.7993335E-11 -1.3239034E-12 -5.4150508E-11 -4.2210340E-12 
+
+ MAXIMUM          7097.       0.000      5.7993E-11   0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -1.2100E-10   0.000     -1.3239E-12 -5.4151E-11 -4.2210E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   12  AT FREQUENCY (CYCLES/TIME) =   610.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  1.0250495E+04  1.0387972E-10 -3.7911668E-10 -8.2260935E-13 -8.9927687E-11 -1.1510097E-10 
+
+ MAXIMUM         1.0250E+04  1.0388E-10   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -3.7912E-10 -8.2261E-13 -8.9928E-11 -1.1510E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   13  AT FREQUENCY (CYCLES/TIME) =   620.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.0807394E+04  2.5586083E-10  4.5694059E-10  6.5586053E-15  1.8073753E-10 -2.2415549E-10 
+
+ MAXIMUM         2.0807E+04  2.5586E-10  4.5694E-10  6.5586E-15  1.8074E-10   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000       0.000       0.000       0.000     -2.2416E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   14  AT FREQUENCY (CYCLES/TIME) =   630.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -8.7304122E+04 -3.8830604E-09 -3.9841995E-09  7.8436386E-12  8.5918476E-10 -3.2089558E-10 
+
+ MAXIMUM          0.000       0.000       0.000      7.8436E-12  8.5918E-10   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM        -8.7304E+04 -3.8831E-09 -3.9842E-09   0.000       0.000     -3.2090E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   15  AT FREQUENCY (CYCLES/TIME) =   640.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -1.1281007E+04  6.6099077E-10 -2.2552702E-10 -8.6707370E-13  1.8876917E-11  9.8285954E-11 
+
+ MAXIMUM          0.000      6.6099E-10   0.000       0.000      1.8877E-11  9.8286E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM        -1.1281E+04   0.000     -2.2553E-10 -8.6707E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   16  AT FREQUENCY (CYCLES/TIME) =   650.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -4.9700151E+03 -9.1164020E-12  1.9807995E-10 -2.1529245E-12  5.0449297E-11  5.5593069E-11 
+
+ MAXIMUM          0.000       0.000      1.9808E-10   0.000      5.0449E-11  5.5593E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -4970.     -9.1164E-12   0.000     -2.1529E-12   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   17  AT FREQUENCY (CYCLES/TIME) =   660.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -2.4904792E+03 -4.6599674E-10 -1.2789351E-10  4.4801515E-13  1.6742650E-11  2.0621935E-11 
+
+ MAXIMUM          0.000       0.000       0.000      4.4802E-13  1.6743E-11  2.0622E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -2490.     -4.6600E-10 -1.2789E-10   0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   18  AT FREQUENCY (CYCLES/TIME) =   670.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -1.0590227E+03 -3.4610015E-10 -1.1020264E-10  2.8189369E-13  6.2849828E-12  2.6218954E-11 
+
+ MAXIMUM          0.000       0.000       0.000      2.8189E-13  6.2850E-12  2.6219E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -1059.     -3.4610E-10 -1.1020E-10   0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   19  AT FREQUENCY (CYCLES/TIME) =   680.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -3.2171812E+01  4.4534827E-11 -1.3126177E-10  4.0271738E-13 -3.2001121E-12  2.4801904E-12 
+
+ MAXIMUM          0.000      4.4535E-11   0.000      4.0272E-13   0.000      2.4802E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -32.17       0.000     -1.3126E-10   0.000     -3.2001E-12   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   20  AT FREQUENCY (CYCLES/TIME) =   690.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  8.3208714E+02 -5.2176850E-10  3.2315107E-11 -4.4047605E-13  4.3018974E-12  3.6961569E-11 
+
+ MAXIMUM          832.1       0.000      3.2315E-11   0.000      4.3019E-12  3.6962E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -5.2177E-10   0.000     -4.4048E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   21  AT FREQUENCY (CYCLES/TIME) =   700.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  1.6637267E+03 -3.9969776E-11  2.4877431E-10 -3.4388032E-13  1.4911928E-11 -1.8817858E-11 
+
+ MAXIMUM          1664.       0.000      2.4877E-10   0.000      1.4912E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -3.9970E-11   0.000     -3.4388E-13   0.000     -1.8818E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   22  AT FREQUENCY (CYCLES/TIME) =   710.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.5665519E+03 -1.1714994E-10 -1.2491988E-10  4.1582572E-13 -2.0480832E-11  1.1431750E-12 
+
+ MAXIMUM          2567.       0.000       0.000      4.1583E-13   0.000      1.1432E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -1.1715E-10 -1.2492E-10   0.000     -2.0481E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   23  AT FREQUENCY (CYCLES/TIME) =   720.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  3.6674094E+03 -4.7463389E-10 -9.8321664E-11 -3.5480434E-14 -1.3527856E-12  9.2268768E-12 
+
+ MAXIMUM          3667.       0.000       0.000       0.000       0.000      9.2269E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -4.7463E-10 -9.8322E-11 -3.5480E-14 -1.3528E-12   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   24  AT FREQUENCY (CYCLES/TIME) =   730.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  5.1867059E+03 -1.6880584E-10  5.6828435E-10 -1.1194498E-13  5.6669692E-11 -6.4431787E-11 
+
+ MAXIMUM          5187.       0.000      5.6828E-10   0.000      5.6670E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -1.6881E-10   0.000     -1.1194E-13   0.000     -6.4432E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   25  AT FREQUENCY (CYCLES/TIME) =   740.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  7.6333250E+03 -1.1067340E-09  1.1008662E-10  5.4144037E-13  5.9520972E-11  1.0208277E-10 
+
+ MAXIMUM          7633.       0.000      1.1009E-10  5.4144E-13  5.9521E-11  1.0208E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -1.1067E-09   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   26  AT FREQUENCY (CYCLES/TIME) =   750.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  1.2646650E+04  2.7838916E-09 -4.8393967E-10 -4.0982024E-13 -1.2041014E-10 -3.0862977E-10 
+
+ MAXIMUM         1.2647E+04  2.7839E-09   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -4.8394E-10 -4.0982E-13 -1.2041E-10 -3.0863E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   27  AT FREQUENCY (CYCLES/TIME) =   760.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  3.0515161E+04  6.0250027E-09 -8.8494757E-09  5.0249961E-13 -9.2010349E-10 -6.1139478E-10 
+
+ MAXIMUM         3.0515E+04  6.0250E-09   0.000      5.0250E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -8.8495E-09   0.000     -9.2010E-10 -6.1139E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   28  AT FREQUENCY (CYCLES/TIME) =   770.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -9.5854665E+04 -8.9324383E-08  5.7939161E-08 -8.2072279E-13  4.3235387E-09  6.1348235E-09 
+
+ MAXIMUM          0.000       0.000      5.7939E-08   0.000      4.3235E-09  6.1348E-09
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM        -9.5855E+04 -8.9324E-08   0.000     -8.2072E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   29  AT FREQUENCY (CYCLES/TIME) =   780.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -1.9118467E+04  7.3309197E-09 -1.0780521E-09 -1.7082379E-12 -1.0794021E-10 -3.9429315E-10 
+
+ MAXIMUM          0.000      7.3309E-09   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM        -1.9118E+04   0.000     -1.0781E-09 -1.7082E-12 -1.0794E-10 -3.9429E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   30  AT FREQUENCY (CYCLES/TIME) =   790.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -1.0600769E+04  1.7403369E-09 -3.2649783E-10 -4.7320545E-13 -3.9948479E-11  4.0849885E-11 
+
+ MAXIMUM          0.000      1.7403E-09   0.000       0.000       0.000      4.0850E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM        -1.0601E+04   0.000     -3.2650E-10 -4.7321E-13 -3.9948E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   31  AT FREQUENCY (CYCLES/TIME) =   800.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -7.2438116E+03 -9.1827669E-10  4.3848779E-10  3.6255870E-13  2.9453856E-11  8.0259465E-11 
+
+ MAXIMUM          0.000       0.000      4.3849E-10  3.6256E-13  2.9454E-11  8.0259E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -7244.     -9.1828E-10   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   32  AT FREQUENCY (CYCLES/TIME) =   810.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -5.3937504E+03  7.3584927E-11 -6.9008155E-11  3.4970706E-13 -1.4761611E-11 -1.4216741E-11 
+
+ MAXIMUM          0.000      7.3585E-11   0.000      3.4971E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -5394.       0.000     -6.9008E-11   0.000     -1.4762E-11 -1.4217E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   33  AT FREQUENCY (CYCLES/TIME) =   820.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -4.1783065E+03 -1.8080469E-10 -2.3689573E-11 -2.5951291E-13  4.1952150E-11  3.2650522E-11 
+
+ MAXIMUM          0.000       0.000       0.000       0.000      4.1952E-11  3.2651E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -4178.     -1.8080E-10 -2.3690E-11 -2.5951E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   34  AT FREQUENCY (CYCLES/TIME) =   830.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -3.2781858E+03  2.0096642E-10  2.5397372E-10 -2.9191218E-13  2.6221947E-11 -1.4641240E-11 
+
+ MAXIMUM          0.000      2.0097E-10  2.5397E-10   0.000      2.6222E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -3278.       0.000       0.000     -2.9191E-13   0.000     -1.4641E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   35  AT FREQUENCY (CYCLES/TIME) =   840.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -2.5425340E+03  1.0381997E-10 -2.6491416E-10 -3.6042933E-13 -3.8859133E-11 -5.8239800E-12 
+
+ MAXIMUM          0.000      1.0382E-10   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -2543.       0.000     -2.6491E-10 -3.6043E-13 -3.8859E-11 -5.8240E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   36  AT FREQUENCY (CYCLES/TIME) =   850.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -1.8816853E+03 -1.7549259E-10  4.5167223E-11 -1.4412499E-13 -3.0263797E-15  1.8194127E-11 
+
+ MAXIMUM          0.000       0.000      4.5167E-11   0.000       0.000      1.8194E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -1882.     -1.7549E-10   0.000     -1.4412E-13 -3.0264E-15   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   37  AT FREQUENCY (CYCLES/TIME) =   860.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -1.2243859E+03  3.1647044E-10  1.6024421E-10 -6.5040848E-13  1.7522054E-11 -2.8875866E-11 
+
+ MAXIMUM          0.000      3.1647E-10  1.6024E-10   0.000      1.7522E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -1224.       0.000       0.000     -6.5041E-13   0.000     -2.8876E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   38  AT FREQUENCY (CYCLES/TIME) =   870.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -4.8812102E+02 -1.4153369E-10  2.5504332E-10 -3.1527875E-13  3.2857440E-11  2.2831536E-11 
+
+ MAXIMUM          0.000       0.000      2.5504E-10   0.000      3.2857E-11  2.2832E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -488.1     -1.4153E-10   0.000     -3.1528E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   39  AT FREQUENCY (CYCLES/TIME) =   880.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  4.6793388E+02 -2.4922496E-10  2.2615375E-10 -1.8467879E-13  2.0796859E-11  3.3622589E-11 
+
+ MAXIMUM          467.9       0.000      2.2615E-10   0.000      2.0797E-11  3.3623E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -2.4922E-10   0.000     -1.8468E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   40  AT FREQUENCY (CYCLES/TIME) =   890.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  1.9859645E+03 -1.9822340E-10 -5.6463288E-11 -6.3712853E-13 -9.2396645E-12  4.9799115E-12 
+
+ MAXIMUM          1986.       0.000       0.000       0.000       0.000      4.9799E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -1.9822E-10 -5.6463E-11 -6.3713E-13 -9.2397E-12   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   41  AT FREQUENCY (CYCLES/TIME) =   900.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  5.3442033E+03 -2.3539419E-10 -7.3981834E-11  1.9310122E-12  3.4377556E-11  7.8254409E-11 
+
+ MAXIMUM          5344.       0.000       0.000      1.9310E-12  3.4378E-11  7.8254E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000     -2.3539E-10 -7.3982E-11   0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   42  AT FREQUENCY (CYCLES/TIME) =   910.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD  2.4210299E+04  2.3157902E-09 -1.6000272E-09 -8.7127095E-13 -1.6095560E-10 -2.8411222E-10 
+
+ MAXIMUM         2.4210E+04  2.3158E-09   0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM          0.000       0.000     -1.6000E-09 -8.7127E-13 -1.6096E-10 -2.8411E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   43  AT FREQUENCY (CYCLES/TIME) =   920.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -2.0391335E+04 -3.9626721E-10 -1.1835475E-09 -1.1827853E-12  1.0847619E-10 -1.5636470E-10 
+
+ MAXIMUM          0.000       0.000       0.000       0.000      1.0848E-10   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM        -2.0391E+04 -3.9627E-10 -1.1835E-09 -1.1828E-12   0.000     -1.5636E-10
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   44  AT FREQUENCY (CYCLES/TIME) =   930.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -8.7319855E+03 -1.7866734E-10 -3.8831846E-10 -1.9179281E-13 -1.0177927E-11  8.5473704E-11 
+
+ MAXIMUM          0.000       0.000       0.000       0.000       0.000      8.5474E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -8732.     -1.7867E-10 -3.8832E-10 -1.9179E-13 -1.0178E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   45  AT FREQUENCY (CYCLES/TIME) =   940.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -5.9960673E+03  4.2785835E-10 -1.3514905E-10  3.4832997E-13 -4.2699200E-11 -2.4046015E-11 
+
+ MAXIMUM          0.000      4.2786E-10   0.000      3.4833E-13   0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -5996.       0.000     -1.3515E-10   0.000     -4.2699E-11 -2.4046E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   46  AT FREQUENCY (CYCLES/TIME) =   950.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -4.7346413E+03  8.3369168E-11 -1.4146871E-10 -2.3799527E-13 -2.0291054E-11  5.5154293E-11 
+
+ MAXIMUM          0.000      8.3369E-11   0.000       0.000       0.000      5.5154E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -4735.       0.000     -1.4147E-10 -2.3800E-13 -2.0291E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   47  AT FREQUENCY (CYCLES/TIME) =   960.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -3.9890985E+03  4.4893086E-11 -6.5370617E-12 -1.2369186E-13 -2.5782416E-11  1.7339216E-11 
+
+ MAXIMUM          0.000      4.4893E-11   0.000       0.000       0.000      1.7339E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -3989.       0.000     -6.5371E-12 -1.2369E-13 -2.5782E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   48  AT FREQUENCY (CYCLES/TIME) =   970.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -3.4859907E+03 -2.4990451E-11  2.3512510E-11  3.1146267E-14 -1.9124021E-11  1.8828017E-11 
+
+ MAXIMUM          0.000       0.000      2.3513E-11  3.1146E-14   0.000      1.8828E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -3486.     -2.4990E-11   0.000       0.000     -1.9124E-11   0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   49  AT FREQUENCY (CYCLES/TIME) =   980.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -3.1173275E+03 -1.6285141E-11  4.7861785E-11 -1.7994109E-13 -2.7159058E-11 -2.3130785E-11 
+
+ MAXIMUM          0.000       0.000      4.7862E-11   0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -3117.     -1.6285E-11   0.000     -1.7994E-13 -2.7159E-11 -2.3131E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   50  AT FREQUENCY (CYCLES/TIME) =   990.00000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -2.8316759E+03 -3.5012455E-12 -5.0279101E-11 -8.8143550E-14 -4.4836705E-11 -7.4993542E-12 
+
+ MAXIMUM          0.000       0.000       0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -2832.     -3.5012E-12 -5.0279E-11 -8.8144E-14 -4.4837E-11 -7.4994E-12
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          INCREMENT NUMBER   51  AT FREQUENCY (CYCLES/TIME) =   1000.0000    
+  
+  
+  
+  
+                                       N O D E   O U T P U T
+  
+  
+  
+  
+   THE FOLLOWING TABLE IS PRINTED FOR NODES BELONGING TO NODE SET ACCN
+  
+       NODE FOOT-  V1             V2             V3             VR1            VR2            VR3          
+            NOTE
+  
+   3000157      0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00 
+   3000157 SSD -2.6013045E+03  3.1670412E-11  7.7884604E-11  6.2953918E-14  3.5888572E-11  4.5406999E-11 
+
+ MAXIMUM          0.000      3.1670E-11  7.7885E-11  6.2954E-14  3.5889E-11  4.5407E-11
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+ MINIMUM         -2601.       0.000       0.000       0.000       0.000       0.000    
+ AT NODE           3000157     3000157     3000157     3000157     3000157     3000157
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH     24 WARNING MESSAGES ON THE DAT FILE
+                              AND      51 WARNING MESSAGES ON THE MSG FILE
+                                       51 WARNINGS ARE FOR NEGATIVE EIGENVALUES
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      9.2    
+       SYSTEM TIME (SEC)    =      1.0    
+       TOTAL CPU TIME (SEC) =      10.    
+       WALLCLOCK TIME (SEC) =            7
