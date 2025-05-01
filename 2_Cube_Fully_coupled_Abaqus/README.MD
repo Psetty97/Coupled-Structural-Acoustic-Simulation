@@ -27,4 +27,4 @@ This folder contains files for a fully coupled structural-acoustic simulation of
 
 ---
 
-For more context on the simulation setup and theory, refer to the [main repository 7_Master_Thesis_Report.pdf](../7_Master_Thesis_Report.pdf).
+For more context on the simulation setup and theory, refer to the [7_Master_Thesis_Report.pdf](../7_Master_Thesis_Report.pdf) in main repository.
