@@ -1,30 +1,37 @@
 # 4_Cube_BEMPP_X_Normal_Vel
 
-This directory contains the setup and implementation of a **Boundary Element Method (BEM)** based acoustic simulation using **BEMPP** in Python. Unlike the FEM-based fully coupled model, this simulation considers only the **outer infinite boundary** (outer layer of the cavity), significantly reducing the degrees of freedom and computational cost.
+This directory contains the setup and implementation of an **acoustic simulation using the Boundary Element Method (BEM)** with the open-source Python library **BEMPP**. The model uses the same cube structure as in the [Sequentially coupled FEM simulation}(../3_Cube_Sequentially_Coupled_Abaqus) but omits the acoustic cavity mesh. Instead, it uses only the outer surface layer of the cavity, significantly reducing computational requirements.
 
 ## 📦 Folder Structure
 
 - `MODEL/`  
-  Contains the Abaqus model input files defining the cube structure and its outer boundary (`outer_infinite`). The cavity volume is not modeled explicitly as the BEM formulation does not require meshing the acoustic domain.
+  Contains the Abaqus model input files defining the vibrating cube and its external boundary mesh (`outer_infinite`) used for acoustic radiation.
 
 - `RUN/`  
-  Contains **Jupyter Notebook files** implementing the acoustic BEM simulation using **BEMPP**. These notebooks import velocity boundary conditions (e.g., from a previous MBS simulation) and solve the Helmholtz problem on the defined outer surface.
+  Includes **Jupyter Notebooks** that implement BEM-based simulation using **BEMPP**. These scripts load surface velocity boundary conditions (e.g., from MBS in Simpack) and compute the resulting far-field acoustic pressure.
 
-## 💡 Objective
+## 🎯 Simulation Objective
 
-To demonstrate the use of open-source BEM tools (BEMPP) as a cost-efficient alternative to commercial FEM-based acoustic solvers. This model uses **normal surface velocity** as boundary input to compute the radiated sound pressure field around the vibrating structure.
+To evaluate the effectiveness of BEM-based methods in modeling exterior acoustics and validate them against Abaqus FEM simulations for sound pressure radiation.
 
-## 🧠 Key Concepts
+## 🔍 Technical Highlights
 
-- **BEM over FEM**: Only the boundary is discretized, making it computationally lighter for exterior acoustic problems.
-- **Normal Velocity as Input**: The boundary condition is extracted from structural simulation and applied to the BEM model.
-- **BEMPP in Python**: Leverages the flexibility and efficiency of Python with boundary element formulations.
+- **Velocity Loading**: Surface-normal velocities were applied to only those cube faces perpendicular to the **X-axis**. Results were **comparable to Abaqus** for a wide range of frequencies in this setup.
+- When extending velocity application to multiple faces (e.g., **X, Y**, and **Z**), simulation accuracy **degraded at higher frequencies**.
+  - This is likely due to:
+    - **Mesh resolution vs. frequency**: For higher wave numbers (frequency ↑), the mesh must be finer to satisfy the **hk ≈ constant** condition.
+    - **Geometry effects**: The sharp, non-smooth cube boundaries introduced numerical errors in high-frequency cases.
 
-## 📝 Notes
+## ⚙️ Tools Used
 
-- Make sure the Python environment includes `bempp`, `numpy`, `scipy`, and `meshio`.
-- This model complements the FEM-based fully coupled model by validating results and highlighting computational efficiency.
+- **Python Libraries**: `bempp`, `numpy`, `scipy`, `meshio`
+- **Preprocessing**: Mesh from Abaqus is exported and read using `meshio` for use in BEMPP.
+
+## 🧠 Why BEM?
+
+- **No need to mesh the acoustic volume**, only boundary mesh is used.
+- Ideal for far-field radiation problems where computational efficiency matters.
+- Flexible integration with FEM/MBS-based structural simulations.
 
 ---
-
 🔗 For more context on the simulation setup and theory, refer to the [7_Master_Thesis_Report.pdf](../7_Master_Thesis_Report.pdf) in main repository.
