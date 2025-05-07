@@ -29,16 +29,16 @@ This repository contains the simulation workflows, scripts, and documentation fo
 ## 📂 Repository Structure
 
 - 📁 project-root/
-- ├── 📄 thesis.pdf               # Final thesis report
-- ├── 📄 [Thesis_Presentation_Slides](./1_Thesis_Presentation.pptx) # Thesis defense slide
-- ├── 📄 README.md                # Project description
-- ├── 📂 scripts/                 # Python scripts (BEMPP, post-processing)
-- │   └── 🐍 bempp_acoustic_simulation.py
-- ├── 📂 abaqus_input_files/      # Example Abaqus input (.inp) files
-- ├── 📂 results/                 # Plots and simulation results (SPL comparisons, etc.)
-- │   └── 🖼️ spl_comparison.png
-- ├── 📂 images/                  # Diagrams, model setups, and simulation visualisations
-- ├── 📄 LICENSE                  # MIT License
+  ├── 📁 2_Cube_Fully_coupled_Abaqus/         # Fully coupled structural-acoustic FEM model in Abaqus
+  ├── 📁 3_Cube_Sequentially_Coupled_Abaqus/  # Sequential coupling setup using Abaqus
+  ├── 📁 4_Cube_BEMPP_X_Normal_Vel/           # BEMPP-based acoustic solver using normal velocity from Abaqus
+  ├── 📁 5_Python_Scripts_Abaqus/             # Python scripts for automation and post-processing (BEMPP, Simpack to Abaqus)
+  ├── 📁 6_results/                           # SPL plots, comparison results, and validation data
+  ├── 📄 1_Thesis_Presentation.pptx           # Thesis defense presentation slides
+  ├── 📄 7_Master_Thesis_Report.pdf           # Final master's thesis report
+  ├── 📄 LICENSE                              # License information (MIT)
+  ├── 📄 README.md                            # Project overview and setup instructions
+  ├── 📄 index.html                           # Web-based index for repository navigation (GitHub Pages or similar)
 
 
 ## 👩‍💻 Author
